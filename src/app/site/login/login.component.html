@@ -1,1 +1,44 @@
-<p>login works!</p>
+<app-load-spinner *ngIf="!isLoading"></app-load-spinner>
+<div class="login" *ngIf="!isLoading">
+    <div class="loginContent">
+        <div class="loginLogo">
+            <img [src]="logo" alt="Goffini Logo mit Schriftzug 'Goffini, Ordnung|Form|Funktion'.">
+        </div>
+        <div class="loginForm">
+            <form [formGroup]="loginForm" (submit)="login(loginForm.value)">
+                <div class="loginUserName">
+                    <img [src]="username" alt="" class="trennLinie">
+                    <input type="text" id="userName" placeholder="BENUTZERNAME" formControlName="username">
+                </div>
+                <div class="loginPasswort">
+                    <img [src]="passwort" alt="" class="trennLinie">
+                    <input type="{{ showPassword ? 'text' : 'password' }}" id="pWord" placeholder="PASSWORT" formControlName="password" [(ngModel)]="password">
+                </div>
+                <div class="loginSubInfos">
+                    <div class="chb">
+                        <label class="chbContainer" for="chbLogin">Passwort anzeigen
+                            <input type="checkbox" id="chbLogin" (change)="togglePasswordVisibility()" value="Passwort anzeigen">
+                            <span class="checkmark"><p>&#10005;</p></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="loginSubInfos">
+                    <!--
+                    <div class="chb">
+                        <label class="chbContainer" for="chbLogin">Angemeldet bleiben
+                            <input type="checkbox" id="chbLogin" value="Angemeldet bleiben">
+                            <span class="checkmark"><p>&#10005;</p></span>
+                        </label>
+                    </div>
+                    -->
+                    <div class="pwFehler">
+                        <a routerLink="/passwort">Passwort vergessen</a>
+                    </div>
+                </div>
+                <div class="submitLogin">
+                    <input type="submit" value="LOGIN" [disabled]="!loginForm.valid">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

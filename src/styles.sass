@@ -1,1 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face
+    font-family: "Roboto"
+    src: url('./assets/font/Roboto-Regular.ttf')
+    font-weight: regular
+
+@font-face
+    font-family: "Roboto"
+    src: url('./assets/font/Roboto-Italic.ttf')
+    font-weight: regular
+
+@font-face
+    font-family: "Roboto"
+    src: url('./assets/font/Roboto-Light.ttf')
+    font-weight: regular
+
+@font-face
+    font-family: "Roboto"
+    src: url('./assets/font/Roboto-Bold.ttf')
+    font-weight: bold
+
+@font-face
+    font-family: "Segoe-Print"
+    src: url('./assets/font/segoepr.ttf')
+    font-weight: regular
+
+@import './sass/var'
+
+/* Globale Einstellungen */
+
+*
+    padding: 0
+    margin: 0
+    border: 0
+
+body
+    background-color: $secondBackground
+    height: 0 !important
+
+.bodyFehlermeldung
+    display: none
+    justify-content: center
+    align-content: center
+
+@media only screen and (max-width: 1279px)
+    .appRoot
+        display: none
+    .bodyFehlermeldung
+        display: flex
+
+@media only screen and (max-height: 600px)
+    .appRoot
+        display: none
+    .bodyFehlermeldung
+        display: flex
+
+h1
+    font-family: $fontSegoe
+    font-weight: bold
+    font-size: 35px
+    color: black
+
+h2, h3, h4, h5, p, a, label, textarea, th, td, tr, span
+    font-family: $fontRoboto
+    font-weight: regular
+    font-size: 15px
+    color: black
+    text-decoration: none
+
+a
+    cursor: pointer
+    &:focus
+        outline: none
+
+.mat-body,
+.mat-body-1,
+.mat-typography
+.mat-body,
+.mat-typography,
+.mat-body-1,
+.mat-typography
+    z-index: -11
+
+.mdc-dialog__container
+    padding: 15px !important
+    border-radius: 20px !important
+    overflow: hidden !important
+    background-color: white
+    box-shadow: 0 11px 15px -7px #0003,0 24px 38px 3px #00000024,0 9px 46px 8px #0000001f !important
+    //box-sizing: content-box !important
+
+.mat-mdc-dialog-container .mdc-dialog__surface
+    box-shadow: none !important
+
+.mdc-dialog__surface
+    overflow-y: initial !important
+
+/* ## Scrollbar ## */
+::-webkit-scrollbar
+    width: 0px
+
+/* Aktive Menupunkte */
+.active
+    border-bottom: 2px solid 
+
+/* Notifications */
+.simple-notification
+    font-family: "Roboto"
+
+.simple-notification.info
+    background-color: #519dfa !important
+
+.simple-notification.info .sn-progress-loader span
+    background-color: #f5f5f5 !important
+
+.simple-notification.success
+    background-color: #47C265 !important
+
+.simple-notification.success .sn-progress-loader span
+    background-color: #f5f5f5 !important
+
+.simple-notification.error
+    background-color: #C23E46 !important
+
+.simple-notification.error .sn-progress-loader span
+    background-color: #f5f5f5 !important

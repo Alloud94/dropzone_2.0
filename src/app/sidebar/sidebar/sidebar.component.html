@@ -1,1 +1,67 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+    <div class="sidebar__header">
+        <div class="sidebar__header__logo">
+            <a routerLink="/loads">
+                <img src="assets/icons/SDO_Logo.png" alt="logo" />
+            </a>
+        </div>
+    </div>
+    <div class="sidebar__menu">
+        <ul>
+            <li>
+                <a routerLink="/board" routerLinkActive="active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/loads" routerLinkActive="active">
+                    <i class="fas fa-truck"></i>
+                    <span>Loads</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/day" routerLinkActive="active">
+                    <i class="fas fa-user"></i>
+                    <span>Sprungtag</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/skydiver" routerLinkActive="active">
+                    <i class="fas fa-truck-moving"></i>
+                    <span>Skydiver</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/cituroMail" routerLinkActive="active">
+                    <i class="fas fa-truck-moving"></i>
+                    <span>Programm</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/docs" routerLinkActive="active">
+                    <i class="fas fa-truck-moving"></i>
+                    <span>Dokumente</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebarBottom">
+        <ul>
+            <li title="Handbuch herunterladen">
+                <a href="#"><img [src]="handbuch"></a>
+            </li>
+            <li title="Cituro öffnen">
+                <a href="#" target="_blank"><img [src]="calender"></a>
+            </li>
+            <li title="Boncard öffnen">
+                <a href="#" target="_blank"><img [src]="dolar"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="clock">
+        <div class="clock__time">
+            <span>{{ time | date: 'dd.MM.yyyy HH:mm:ss' }}</span>
+        </div>
+    </div>
+</div>

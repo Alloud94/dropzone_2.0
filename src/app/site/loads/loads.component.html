@@ -1,1 +1,36 @@
-<p>loads works!</p>
+<div class="siteContent">
+    <div class="add">
+        <div class="addLoad">
+            <button (click)="createLoad()" class="button">Neuer Load erstellen</button>
+        </div>
+    </div>
+    <div class="loads">
+        <div class="load" *ngFor="let l of loads">
+            <div class="loadTop">
+                <div class="loadTitle">
+                    <h2>Load {{l.number}}</h2>
+                </div>
+                <div class="loadInfo">
+                    <img [src]="trash" (click)="deleteLoad(l.id)" title="Load löschen">
+                    <img [src]="airplane" (click)="successFlight(l.id)" title="Load abschliessen">
+                    <img [src]="coment" (click)="addComent(l.id)" title="Kommentar zum Load hinzufügen">
+                    <span class="loadAuslastung">{{l.auslastung}}/10</span>
+                </div>
+            </div>
+            <div class="loadSpringer">
+                <div class="springer" *ngFor="let j of filteredJumper(l.number)">
+                    <div class="jumper">
+                        <img [src]="trash">
+                        <p>{{j.vorname}} {{j.nachname}}</p>
+                    </div>
+                    <div class="deleteJumper">
+                        <p (click)="deleteJumper(l.id, j.id)" title="Springer vom Load entfernen">X</p>
+                    </div>
+                </div>
+            </div>
+            <div class="addSpringer" *ngIf="filteredJumper(l.number).length < 10">
+                <img [src]="add" (click)="addJumper(l.id)" title="Springer zum Load hinzufügen">
+            </div>
+        </div>
+    </div>
+</div>

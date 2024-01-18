@@ -1,0 +1,107 @@
+@import './src/sass/_var'
+
+.siteContent
+    height: 100%
+    width: 100%
+
+.button
+    padding: 1em
+    background-image: linear-gradient(to right, $primaryColor, $secondaryColor)
+    border: transparent 1px solid
+    border-radius: 0.7em
+    color: white
+    cursor: pointer
+
+.loads
+    display: flex
+    flex-wrap: wrap
+
+.load
+    margin-top: 2em
+    width: 15em
+    border-radius: 0.5em
+    border: 2px solid transparent
+    float: left
+    margin-right: 0.8em
+    background-color: white
+    box-shadow: 0 0 0.5em 0.1em rgba(0, 0, 0, 0.2)
+
+.loadTop
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 3em
+    border-bottom: 1px solid black
+    img
+        cursor: pointer
+        height: 1.2em
+        margin-right: 0.5em
+
+.loadTitle
+    padding-left: 0.5em
+
+.loadInfo
+    padding-right: 0.5em
+
+.loadAuslastung
+    background-color: #ADD8E6
+    color: white
+    padding: 0.2em
+    border: transparent 1px solid
+    border-radius: 0.7em
+    font-weight: bold
+
+.loadInfo
+    display: flex
+    float: right
+    font-weight: regular
+
+.springer 
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px solid black
+    margin: 0.5em
+    padding-bottom: 0.2em
+    img
+        height: 0.8em
+        margin-right: 0.5em
+
+.jumper
+    display: flex
+
+.deleteJumper
+    p
+        cursor: pointer
+        display: flex
+        font-weight: bold
+        transition: 0.3s
+        &:hover
+            color: $primaryColor
+            transition: 0.3s
+
+.add
+    display: inline-block
+
+.addLoad
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 2em
+    img
+        height: 3em
+        margin-right: 0.5em
+        cursor: pointer
+
+.addSpringer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: auto
+    width: 100%
+    margin-top: 0.5em
+    margin-bottom: 0.5em
+    img
+        height: 1.5em
+        margin-right: 0.5em
+        cursor: pointer

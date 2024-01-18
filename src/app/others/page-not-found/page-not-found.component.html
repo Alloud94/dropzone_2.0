@@ -1,0 +1,20 @@
+<app-load-spinner *ngIf="!isLoading"></app-load-spinner>
+<div class="login" *ngIf="!isLoading">
+    <div class="loginContent">
+        <div class="loginLogo">
+            <img [src]="logo" alt="Skydive Ostschweiz Logo">
+        </div>
+        <div class="content">
+            <div class="font">
+                <h1>404 Error - Page not found</h1>
+            </div>
+            <br/>
+            <br/>
+            <p>Es tut uns leid, aber die gewünschte Seite kann leider nicht gefunden werden. Hier geht es zurück:</p>
+            <div class="submitLogin">
+                <a routerLink="/" routerLinkActive="active">Startseite</a>
+            </div>
+
+        </div>
+    </div>
+</div>
