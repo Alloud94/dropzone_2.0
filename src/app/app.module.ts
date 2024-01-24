@@ -22,6 +22,7 @@ import { StartDayComponent } from './site/start-day/start-day.component';
 import { PageNotFoundComponent } from './others/page-not-found/page-not-found.component';
 import { LoadSpinnerComponent } from './others/load-spinner/load-spinner.component';
 import { CituroMailComponent } from './site/cituro-mail/cituro-mail.component';
+import { UserComponent } from './site/user/user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -35,6 +36,8 @@ const routes: Routes = [
   canActivate: [AuthenticationGuard] },
   { path: 'skydiver', component: SkydiverComponent,
   canActivate: [AuthenticationGuard] },
+  { path: 'user/:id', component: UserComponent,
+  canActivate: [AuthenticationGuard]},
   { path: 'docs', component: DocsComponent,
   canActivate: [AuthenticationGuard] },
   { path: 'cituroMail', component: CituroMailComponent,
@@ -56,7 +59,8 @@ const routes: Routes = [
     StartDayComponent,
     PageNotFoundComponent,
     LoadSpinnerComponent,
-    CituroMailComponent
+    CituroMailComponent,
+    UserComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

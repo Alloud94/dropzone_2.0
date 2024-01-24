@@ -3,9 +3,35 @@ $primaryColor: #CB2146
 $secondaryColor: #DF2584
 $backgroundColor: #F5F5F5
 $secondBackground: #d4d4d465
+$tableColor: #919191
 $budgetRot: #b34700
 $infoGruen: #1fbf43
 
 /* Global Fonts */
 $fontRoboto: "Roboto", sans-serif
 $fontSegoe: "Segoe-Print", sans-serif
+
+
+/* Elemente */
+.siteTitle
+    margin-top: 1em
+    margin-bottom: 1em
+
+
+button, input, .grundInfos
+    padding: 1em
+    border: transparent 1px solid
+    border-radius: 0.7em
+    margin-right: 1em
+    margin-bottom: 1em
+
+button
+    cursor: pointer
+    background-image: linear-gradient(to right, $primaryColor, $secondaryColor)
+    color: white
+
+input 
+    border: 1px solid $tableColor
+
+.searchInput
+    width: 20em

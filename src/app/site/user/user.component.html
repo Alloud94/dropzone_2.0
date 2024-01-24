@@ -1,0 +1,73 @@
+<div class="siteContent">
+    <div class="siteTitle">
+        <span>
+            <img [src]="notfall" *ngIf="checkRegistration()" title= "{{jumper![0].vorname}} {{jumper![0].nachname}} muss den Waiver erneut ausfüllen!">
+            <h1>{{jumper![0].vorname}} {{jumper![0].nachname}}</h1>
+        </span>
+        <p>User-Id: {{jumper![0].id}}</p>
+    </div>
+    <div class="grundInfos">
+        <div class="firstGap">
+            <div class="row">
+                <h4>Lizenznummer</h4>
+                <p>{{jumper![0].lizenznr}}</p>
+            </div>
+            <div class="row">
+                <h4>Vorname</h4>
+                <p>{{jumper![0].vorname}}</p>
+            </div>
+            <div class="row">
+                <h4>Nachname</h4>
+                <p>{{jumper![0].nachname}}</p>
+            </div>
+            <div class="row">
+                <h4>Geburtstag</h4>
+                <p>{{jumper![0].geburtsdatum | date: 'dd.MM.yyyy'}}</p>
+            </div>
+        </div>
+        <div class="secondGap">
+            <div class="row">
+                <h4>Boncard-Id</h4>
+                <p (click)="copy(jumper![0].boncardId)" class="copy" title="Anklicken um Nummer zu kopieren">{{jumper![0].boncardId}}</p>
+            </div>
+            <div class="row">
+                <h4>Registrationsdatum</h4>
+                <p>{{jumper![0].registration | date: 'dd.MM.yyyy'}}</p>
+            </div>
+            <div class="row">
+                <h4>Mitglied</h4>
+                <input type="checkbox" [(ngModel)]="jumper![0].mitgliedstatus">
+            </div>
+            <div class="row">
+                <h4>Lizenziert</h4>
+                <input type="checkbox" [(ngModel)]="jumper![0].lizenznr">
+            </div>
+            <div class="row" *ngIf="jumper![0].schuelerstatus">
+                <h4>Trainingsausweis</h4>
+                <input type="checkbox" [(ngModel)]="jumper![0].trainingsausweis">
+            </div>
+        </div>
+    </div>
+    <div class="kontaktDaten">
+        <h2>Kontaktdaten</h2>
+        <div class="row">
+            <h4>E-Mail</h4>
+            <p>{{jumper![0].email}}</p>
+        </div>
+        <div class="row">
+            <h4>Telefon</h4>
+            <p>{{jumper![0].telefonnummer}}</p>
+        </div>
+        <div class="row">
+            <h4>Adresse</h4>
+            <p>{{jumper![0].adresse}}, {{jumper![0].plz}} {{jumper![0].ortschaft}}</p>
+        </div>
+    </div>
+    <div class="notfallKontakt">
+
+    </div>
+    <div class="sprungHistory">
+
+    </div>
+
+</div>

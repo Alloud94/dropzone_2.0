@@ -1,1 +1,40 @@
 @import './src/sass/_var'
+
+.siteContent
+    overflow: scroll
+    width: 100%
+    height: 100%
+
+
+.filter
+    display: flex
+
+.tableJumper
+    margin-right: 1em
+    table
+        width: 100% 
+        table-layout: fixed
+        background-color: white
+        padding: 1em
+        border: 1px solid transparent
+        border-radius: 5px
+        tr
+            transition: 0.3s
+            &:hover
+                background-color: $secondBackground
+                transition: 0.3s
+
+            th
+                font-weight: bold
+                border-bottom: 1px solid $tableColor
+                padding-left: 0.5em 
+                padding-right: 0.5em
+                text-align: left
+            td
+                border-bottom: 1px solid $tableColor
+                padding-bottom: 0.5em
+                padding-top: 0.5em
+                cursor: pointer
+                padding-left: 0.5em
+                padding-right: 0.5em
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationServiceService } from 'src/app/services/notification-service.service';
 
 @Component({
   selector: 'app-day',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notificationService: NotificationServiceService) { }
 
   ngOnInit(): void {
+
   }
+
 
 }

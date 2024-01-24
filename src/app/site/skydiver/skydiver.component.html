@@ -1,0 +1,37 @@
+<div class="siteContent">
+    <div class="siteTitle">
+        <h1>Übersicht {{jumper?.length}} Skydiver</h1>
+    </div>
+    <div class="filter">
+        <button (click)="filterJumper('alle')">Alle User anzeigen ({{jumper!.length}})</button>
+        <button (click)="filterJumper('skydiver')">Nur Sportspringer ({{filterJumperCount('skydiver')}})</button>
+        <button (click)="filterJumper('guest')">Nur Gäst ({{filterJumperCount('guest')}})</button>
+        <div class="skydiverSearch">
+            <input type="text" class="searchInput" [(ngModel)]="searchTerm" (keyup)="searchSkydiver()" placeholder="Suche Skydiver">
+        </div>
+    </div>
+    <div class="tableJumper">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Boncard-Id</th>
+                <th>E-Mail</th>
+                <th>Mitglied</th>
+                <th>Status</th>
+                <th>Notfallblatt</th>
+                <th>Typ</th>
+                <th>Registration</th>
+            </tr>
+            <tr *ngFor="let j of filteredJumper" (click)="openUser(j.id)">
+                <td>{{j.nachname}} {{j.vorname}}</td>
+                <td>{{j.boncardId}}</td>
+                <td>{{j.email}}</td>
+                <td>{{j.mitgliedstatus ? 'Mitglied' : "Nicht Mitglied"}}</td>
+                <td>{{checkStatus(j.id)}}</td>
+                <td>{{j.notfallblatt}} <img [src]=""> </td>
+                <td>{{j.type}}</td>
+                <td>{{j.registration | date: 'dd.MM.yyyy'}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
