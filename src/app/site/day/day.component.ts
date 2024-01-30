@@ -8,11 +8,11 @@ import { NotificationServiceService } from 'src/app/services/notification-servic
 })
 export class DayComponent implements OnInit {
 
-  constructor(private notificationService: NotificationServiceService) { }
+constructor(private notificationService: NotificationServiceService) { }
 
-  ngOnInit(): void {
+ngOnInit(): void {
 
-  }
+}
 
 
 }

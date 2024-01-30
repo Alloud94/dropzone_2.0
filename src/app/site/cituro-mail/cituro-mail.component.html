@@ -1,3 +1,105 @@
 <div class="siteContent">
 
+    <div class="siteTitle">
+        <h1>Sprungprogramm</h1>
+    </div>
+    <div class="nextWeekend">
+        <div class="nextWeekendHeader">
+            <h2>Kommendes Wochenende</h2>
+            <table *ngFor="let d of filterNextWeek(this.naechsterSamstag)">
+                <tr>
+                    <td colspan="2">{{d.tag}}, {{d.datum | date : 'dd.MM.yyyy'}}</td>
+                    <td>{{d.kommentar}}</td>
+                </tr>
+                <tr>
+                    <td>Tandem</td>
+                    <td>09:00: {{getNumberOfTAGuests('09:00', d.datum, 'Tandem')}}x | 13:00: {{getNumberOfTAGuests('13:00', d.datum, 'Tandem')}}x | 16:00: {{getNumberOfTAGuests('16:00', d.datum, 'Tandem')}}x</td>
+                </tr>
+                <tr>
+                    <td>AFF EA</td>
+                    <td>{{getNumberOfAFFGuests(d.datum, 'AFF')}}x</td>
+                </tr>
+                <tr>
+                    <td>AFF Instruktor</td>
+                    <td>{{d.affVorname}} {{d.affNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Tages Instruktor</td>
+                    <td>{{d.instrVorname}} {{d.instrNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Sprungdienstleiter</td>
+                    <td>{{d.sdlVorname}} {{d.sdlNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Video Flyer</td>
+                    <td>{{d.videoVorname}} {{d.videoNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Pilot</td>
+                    <td>{{d.pilotVorname}} {{d.pilotNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Kommentar</td>
+                    <td>{{d.kommentar}}</td>
+                </tr>
+            </table>
+            <table *ngFor="let d of filterNextWeek(this.naechsterSonntag)">
+                <tr>
+                    <td colspan="2">{{d.tag}}, {{d.datum | date : 'dd.MM.yyyy'}}</td>
+                    <td>{{d.kommentar}}</td>
+                </tr>
+                <tr>
+                    <td>Tandem</td>
+                    <td>09:00: {{getNumberOfTAGuests('09:00', d.datum, 'Tandem')}}x | 13:00: {{getNumberOfTAGuests('13:00', d.datum, 'Tandem')}}x | 16:00: {{getNumberOfTAGuests('16:00', d.datum, 'Tandem')}}x</td>
+                </tr>
+                <tr>
+                    <td>AFF EA</td>
+                    <td>{{getNumberOfAFFGuests(d.datum, 'AFF')}}x</td>
+                </tr>
+                <tr>
+                    <td>AFF Instruktor</td>
+                    <td>{{d.affVorname}} {{d.affNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Tages Instruktor</td>
+                    <td>{{d.instrVorname}} {{d.instrNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Sprungdienstleiter</td>
+                    <td>{{d.sdlVorname}} {{d.sdlNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Video Flyer</td>
+                    <td>{{d.videoVorname}} {{d.videoNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Pilot</td>
+                    <td>{{d.pilotVorname}} {{d.pilotNachname}}</td>
+                </tr>
+                <tr>
+                    <td>Kommentar</td>
+                    <td>{{d.kommentar}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <div class="openShifts">
+        <div class="openShiftsTitle">
+            <h2>Offene Dienste</h2>
+        </div>
+        <table>
+
+        </table>
+    </div>
+    <div class="furtherDays">
+        <div class="furtherDaysTitle">
+            <h2>Restliche Tage</h2>
+        </div>
+        <table>
+
+        </table>
+    </div>
+
 </div>
