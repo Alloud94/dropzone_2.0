@@ -3,23 +3,10 @@
 :host
     display: flex
     flex-direction: column
-    height: 100%
-    width: 100%
-    margin-right: 3em
-
-.siteContent
-    height: 100%
-    width: 100%
-
-.siteTitle span
-    display: flex
-    align-items: center
-    img
-        height: 2.3em
-        margin-right: 0.5em
+    min-height: 100%
+    min-width: 100%
 
 .grundInfos
-    width: 100%
     display: flex
     background-color: white
 
@@ -28,13 +15,38 @@
     width: 50%
 
 .row
-    width: 100%
     justify-content: space-between
     display: flex
     p
         padding-right: 1em
         padding-top: 0.2em
         padding-bottom: 0.2em
+        img
+            height: 2em
+
+.kontaktDaten,
+.notfallKontakt,
+.sprungHistory
+    h4
+        width: 50%
+        text-align: left
+    p
+        width: 50%
+        text-align: left
+
+.dataSection
+    margin-bottom: 1em
+    background-color: white
+    padding: 1em
+    border: transpraent 1px solid
+    border-radius: 0.7em
+    h2
+        margin-bottom: 0.5em
+
 
 .copy 
     cursor: pointer
+
+.overdue 
+  color: red
+

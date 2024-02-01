@@ -20,79 +20,146 @@ export class SkydiverComponent implements OnInit {
   ngOnInit(): void {
 
     this.jumper = [
-      {id: 1, 
-        vorname: 'Hans', 
-        nachname: 'Muster', 
-        geburtsdatum: new Date(), 
-        gewicht: 80, 
-        adresse: 'Musterstrasse 1', 
-        plz: 1234, 
-        ortschaft: 'Musterort', 
-        land: 'Schweiz', 
-        telefonnummer: 123456789, 
-        email: 'max.muster@muster.com', 
-        boncardId: 123456789, 
-        lizenznr: 123456789, 
-        anzJumps: 123, 
-        anzJumpsLetzte12Monate: 12, 
-        schuelerstatus: true, 
-        mitgliedstatus: true, 
+      {
+        id: 1,
+        vorname: 'Hans',
+        nachname: 'Muster',
+        geburtsdatum: new Date(),
+        gewicht: 80,
+        adresse: 'Musterstrasse 1',
+        plz: 1234,
+        ortschaft: 'Musterort',
+        land: 'Schweiz',
+        telefonnummer: 123456789,
+        email: 'max.muster@muster.com',
+        boncardId: 9775,
+        lizenznr: 'CH-5419',
+        anzJumps: 123,
+        anzJumpsLetzte12Monate: 12,
+        schuelerstatus: true,
+        mitgliedstatus: true,
         trainingsausweis: true,
-        notfallkontakt: 'Max Muster', 
-        notfalladresse: 'Musterstrasse 1', 
-        notfallPLZ: 1234, 
-        notfallort: 'Musterort', 
-        notfallLand: 'Schweiz', 
-        notfalltelefon: 123456789, 
-        notfalltelefon2: 123456789, 
-        registration: new Date(), 
-        letzteAktualisierung: new Date(), 
-        type: 'skydiver', 
-        status: 'Aktiv', 
-        notfallblatt: ''},
+        notfallkontakt: 'Max Muster',
+        notfalladresse: 'Musterstrasse 1',
+        notfallPLZ: 1234,
+        notfallort: 'Musterort',
+        notfallLand: 'Schweiz',
+        notfalltelefon: 123456789,
+        notfalltelefon2: 123456789,
+        registration: new Date(),
+        letzteAktualisierung: new Date(),
+        type: 'skydiver',
+        status: 'Aktiv',
+        notfallblatt: ''
+      },
+      {
+        id: 1,
+        vorname: 'Hans',
+        nachname: 'Muster',
+        geburtsdatum: new Date(),
+        gewicht: 80,
+        adresse: 'Musterstrasse 1',
+        plz: 1234,
+        ortschaft: 'Musterort',
+        land: 'Schweiz',
+        telefonnummer: 123456789,
+        email: 'max.muster@muster.com',
+        boncardId: 9775,
+        lizenznr: 'CH-5419',
+        anzJumps: 123,
+        anzJumpsLetzte12Monate: 12,
+        schuelerstatus: true,
+        mitgliedstatus: true,
+        trainingsausweis: true,
+        notfallkontakt: 'Max Muster',
+        notfalladresse: 'Musterstrasse 1',
+        notfallPLZ: 1234,
+        notfallort: 'Musterort',
+        notfallLand: 'Schweiz',
+        notfalltelefon: 123456789,
+        notfalltelefon2: 123456789,
+        registration: new Date(),
+        letzteAktualisierung: new Date(),
+        type: 'skydiver',
+        status: 'Aktiv',
+        notfallblatt: ''
+      },
+      {
+        id: 1,
+        vorname: 'Hans',
+        nachname: 'Muster',
+        geburtsdatum: new Date(),
+        gewicht: 80,
+        adresse: 'Musterstrasse 1',
+        plz: 1234,
+        ortschaft: 'Musterort',
+        land: 'Schweiz',
+        telefonnummer: 123456789,
+        email: 'max.muster@muster.com',
+        boncardId: 9775,
+        lizenznr: 'CH-5419',
+        anzJumps: 123,
+        anzJumpsLetzte12Monate: 12,
+        schuelerstatus: true,
+        mitgliedstatus: true,
+        trainingsausweis: true,
+        notfallkontakt: 'Max Muster',
+        notfalladresse: 'Musterstrasse 1',
+        notfallPLZ: 1234,
+        notfallort: 'Musterort',
+        notfallLand: 'Schweiz',
+        notfalltelefon: 123456789,
+        notfalltelefon2: 123456789,
+        registration: new Date(),
+        letzteAktualisierung: new Date(),
+        type: 'skydiver',
+        status: 'Aktiv',
+        notfallblatt: ''
+      },
+
     ];
 
     this.filteredJumper = this.jumper;
 
   }
 
-  openUser(id: number){
+  openUser(id: number) {
     this.router.navigate(['/user', id]);
   }
 
   // Filter
   filterJumper(typ: string) {
-    if(typ === 'alle'){
+    if (typ === 'alle') {
       this.filteredJumper = this.jumper;
-    }else{
-      this.filteredJumper =  this.jumper?.filter(jumper => jumper.type === typ) || [];
+    } else {
+      this.filteredJumper = this.jumper?.filter(jumper => jumper.type === typ) || [];
     }
   }
 
-  searchSkydiver() : void{
-    const filteredJumper = this.jumper!.filter(jumper => 
-      jumper.vorname.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
-      jumper.nachname.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
+  searchSkydiver(): void {
+    const filteredJumper = this.jumper!.filter(jumper =>
+      jumper.vorname.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      jumper.nachname.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       jumper.type.toLowerCase().includes(this.searchTerm.toLowerCase()));
 
-      this.filteredJumper = filteredJumper;  
+    this.filteredJumper = filteredJumper;
   }
 
-  filterJumperCount(typ: string){
+  filterJumperCount(typ: string) {
     return this.jumper?.filter(jumper => jumper.type === typ).length;
   }
 
-  checkStatus(id: number){
+  checkStatus(id: number) {
 
     const checkJumper = this.jumper?.find(jumper => jumper.id === id);
 
-    if(checkJumper?.schuelerstatus == true && checkJumper?.trainingsausweis == true){
+    if (checkJumper?.schuelerstatus == true && checkJumper?.trainingsausweis == true) {
       return "Schülerstatus, Trainingsausweis";
-    }else if(checkJumper?.schuelerstatus == true && checkJumper?.trainingsausweis == false){
+    } else if (checkJumper?.schuelerstatus == true && checkJumper?.trainingsausweis == false) {
       return "Schülerstatus, kein Trainingsausweis";
-    }else if(checkJumper?.lizenznr != undefined){
+    } else if (checkJumper?.lizenznr != undefined) {
       return "Lizenziert";
-    }else{
+    } else {
       return "Kein Status";
     }
 

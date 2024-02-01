@@ -1,20 +1,20 @@
 @font-face
-    font-family: "Roboto"
+    font-family: "RobotoRegular"
     src: url('./assets/font/Roboto-Regular.ttf')
     font-weight: regular
 
 @font-face
-    font-family: "Roboto"
+    font-family: "RobotoItalic"
     src: url('./assets/font/Roboto-Italic.ttf')
     font-weight: regular
 
 @font-face
-    font-family: "Roboto"
+    font-family: "RobotoLight"
     src: url('./assets/font/Roboto-Light.ttf')
     font-weight: regular
 
 @font-face
-    font-family: "Roboto"
+    font-family: "RobotoBold"
     src: url('./assets/font/Roboto-Bold.ttf')
     font-weight: bold
 
@@ -26,6 +26,7 @@
     padding: 0
     margin: 0
     border: 0
+    box-sizing: border-box
 
 body
     background-color: $secondBackground
@@ -50,52 +51,59 @@ body
         display: flex
 
 h1
-    font-family: $fontRoboto
+    font-family: $fontRobotoBold
     font-weight: bold
     font-size: 35px
     color: black
 
 h2
-    font-family: $fontRoboto
+    font-family: $fontRobotoItalic
     font-weight: regular
-    font-size: 15px
+    font-size: 20px
     color: black
     text-decoration: none
 
 h3
-    font-family: $fontRoboto
+    font-family: $fontRobotoItalic
     font-weight: regular
     font-size: 15px
     color: black
     text-decoration: none
 
 h4
-    font-family: $fontRoboto
+    font-family: $fontRobotoRegular
     font-weight: regular
     font-size: 15px
     color: black
     text-decoration: none
 
 h5
-    font-family: $fontRoboto
+    font-family: $fontRobotoRegular
     font-weight: regular
     font-size: 15px
     color: black
     text-decoration: none
 
 
-p, a, label, textarea, th, td, tr, span
-    font-family: $fontRoboto
+p, a, label, textarea, th, td, tr, span, button
+    font-family: $fontRobotoLight
     font-weight: regular
     font-size: 15px
     color: black
     text-decoration: none
-
 
 a
     cursor: pointer
     &:focus
         outline: none
+
+.siteTitle span
+    display: flex
+    align-items: center
+    margin-right: 1em
+    img
+        height: 2.3em
+        margin-right: 0.5em
 
 .mat-body,
 .mat-body-1,

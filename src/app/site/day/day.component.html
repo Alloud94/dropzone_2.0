@@ -1,3 +1,91 @@
 <div class="siteContent">
+    <div class="siteTitle">
+        <h1>Tagesübersicht</h1>
+    </div>
+
+    <div class="column">
+        <div class="columnLeft">
+            <h2>Administration</h2>
+            <div class="adminForm">
+                <form [formGroup]="dayAdminForm">
+                    <input type="date" name="jumpDay" formControlName="jumpDay">
+                    <label for="sdl">Sprungdienstleiter</label>
+                    <input type="text" name="sdl" formControlName="sdl">
+                    <label for="pilot">Pilot</label>
+                    <input type="text" name="pilot" formControlName="pilot">
+                    <label for="instr">Tages Instruktor</label>
+                    <input type="text" name="instr" formControlName="instr">
+                    <label for="studies">Anzahl Schüler</label>
+                    <input type="number" name="studies" formControlName="studies">
+                    <label for="kommentar">Kommentar</label>
+                    <textarea name="kommentar" formControlName="kommentar" id="" cols="30" rows="10"></textarea>
+                    <label for="flightMinutes">Total Flugzeit in Minuten</label>
+                    <input type="number" name="flightMinutes" formControlName="flightMinutes">
+                    <input type="submit" value="Speichern">
+                </form>
+            </div>
+        </div>
+        <div class="columnRight">
+            <h2>Load-Auslastung / Finanzierung</h2>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="columnLeft">
+            <h2>Springer-Finanzen</h2>
+            <div class="jumperFinanceTable">
+                <table>
+                    <tr>
+                        <th>Name:</th>
+                        <th>Boncard-Id</th>
+                        <th>Sprungbetrag heute</th>
+                        <th>Aktionen</th>
+                    </tr>
+                    <tr *ngFor="let j of jumperFinances">
+                        <td>{{j.vorname}} {{j.nachname}}</td>
+                        <td>{{j.boncardId}}</td>
+                        <td>{{j.totalCosts}}</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="columnRight">
+            <h2>Tagesabschluss</h2>
+            <div class="tagesabschluss">
+                <div class="row">
+                    <p>
+                        1) Boncard-Rapport herunterladen und <a href="https://pay.boncard.ch/Login.aspx">Abbuchungen vornehmen</a><br><span class="yellow">Springer hat zu wenig Geld?<br>- Kartensaldo auf 0 setzen (in boncard-tool)<br>- Name des Springers und restlicher Schuldbetrag</span>                        in Kommentarfeld erfassen!
+                    </p>
+                    <button (click)="downloadBoncardAuswertung()">Boncard Auswertung herunterladen</button>
+                </div>
+                <div class="row">
+                    <p>
+                        2) Tagesrapport herunterladen
+                    </p>
+                    <button (click)="downloadTagesauswertung()">Tagesauswertung</button>
+                </div>
+                <div class="row">
+                    <p>
+                        3) Rapporte überprüft und i.O?<br><span class="yellow">Ansonsten Kommentar erfassen.</span>
+                    </p>
+                </div>
+                <div class="row">
+                    <p>
+                        4) <span class="abschluss">Sprungtag abschliessen</span><br>Die Rapporte werden automatisch versendet.
+                    </p>
+                    <button (click)="sprungtagAbschliessen()">Sprungtag abschliessen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="columnLeft">
+            <h2>Admin</h2>
+            <button (click)="deleteJumpDay()">Sprungtag löschen</button>
+        </div>
+    </div>
+
 
 </div>

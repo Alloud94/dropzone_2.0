@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-day.component.sass']
 })
 export class StartDayComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Skydiver } from 'src/app/interfaces/skydiver';
+import { NotificationServiceService } from 'src/app/services/notification-service.service';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +13,8 @@ notfall: string = 'assets/icons/notfall.png';
 id?: number;
 jumper?: Skydiver[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+    private notificationService: NotificationServiceService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -35,8 +37,8 @@ jumper?: Skydiver[];
         land: 'Schweiz', 
         telefonnummer: 123456789, 
         email: 'max.muster@muster.com', 
-        boncardId: 123456789, 
-        lizenznr: 0, 
+        boncardId: 9775, 
+        lizenznr: 'CH-5419', 
         anzJumps: 123, 
         anzJumpsLetzte12Monate: 12, 
         schuelerstatus: true, 
@@ -50,7 +52,7 @@ jumper?: Skydiver[];
         notfalltelefon: 123456789, 
         notfalltelefon2: 123456789, 
         registration: new Date(), 
-        letzteAktualisierung: new Date(2023, 11, 10), 
+        letzteAktualisierung: new Date(2022, 11, 10), 
         type: 'Schüler', 
         status: 'Aktiv', 
         notfallblatt: ''},
@@ -66,8 +68,25 @@ jumper?: Skydiver[];
     }
   }
 
+  isDateOverdue(date: Date): boolean {
+    const currentDate = new Date();
+    const twelveMonthsAgo = new Date();
+    twelveMonthsAgo.setFullYear(currentDate.getFullYear() - 1);
+
+    return date < twelveMonthsAgo;
+  }
+
+  getBoncardURL(id: number){
+    return "https://swally.ch/SaldoView?crd=629912001096" + id;
+
+  }
+
   copy(value: number){
     navigator.clipboard.writeText(String(value));
+  }
+
+  deleteJumper(){
+    this.notificationService.notificationInfoShort("Not Implemented yet");
   }
 
 }

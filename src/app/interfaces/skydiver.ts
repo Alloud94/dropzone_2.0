@@ -14,7 +14,7 @@ export interface Skydiver {
     boncardId: number;
 
     // Sprungdaten
-    lizenznr: number;
+    lizenznr: string;
     anzJumps: number;
     anzJumpsLetzte12Monate: number;
     schuelerstatus: boolean;

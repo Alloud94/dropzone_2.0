@@ -6,7 +6,7 @@
         </span>
         <p>User-Id: {{jumper![0].id}}</p>
     </div>
-    <div class="grundInfos">
+    <div class="grundInfos dataSection">
         <div class="firstGap">
             <div class="row">
                 <h4>Lizenznummer</h4>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="kontaktDaten">
+    <div class="kontaktDaten dataSection">
         <h2>Kontaktdaten</h2>
         <div class="row">
             <h4>E-Mail</h4>
@@ -63,11 +63,43 @@
             <p>{{jumper![0].adresse}}, {{jumper![0].plz}} {{jumper![0].ortschaft}}</p>
         </div>
     </div>
-    <div class="notfallKontakt">
+    <div class="notfallKontakt dataSection">
+        <h2>Notfallkontakt</h2>
+        <div class="row">
+            <h4>Letzte Aktualisierung</h4>
+            <p [ngClass]="{'overdue': isDateOverdue(jumper![0].letzteAktualisierung)}" title="Rot = Springer muss erneut das Notfallblatt ausfüllen!">{{jumper![0].letzteAktualisierung | date: 'dd.MM.yyyy'}}</p>
+        </div>
+        <div class="row">
+            <h4>Notfallkontakt</h4>
+            <p>{{jumper![0].notfallkontakt}}</p>
+        </div>
+        <div class="row">
+            <h4>Adresse</h4>
+            <p>{{jumper![0].notfalladresse}}, {{jumper![0].notfallPLZ}} {{jumper![0].notfallort}}, {{jumper![0].notfallLand}}</p>
+        </div>
+        <div class="row">
+            <h4>Telefon 1</h4>
+            <p>{{jumper![0].notfalltelefon}}</p>
+        </div>
+        <div class="row">
+            <h4>Telefon 2</h4>
+            <p>{{jumper![0].notfalltelefon2}}</p>
+        </div>
 
     </div>
-    <div class="sprungHistory">
-
+    <div class="sprungHistory dataSection">
+        <h2>Sprunghistorie</h2>
+        <div class="row">
+            <h4>Sprünge Total</h4>
+            <p>{{jumper![0].anzJumps}}</p>
+        </div>
+        <div class="row">
+            <h4>Sprünge letzte 12 Monate / seit Registration</h4>
+            <p>{{jumper![0].anzJumpsLetzte12Monate}}</p>
+        </div>
     </div>
+    <button><a href="https://swissskydive.org/dax/apps/SSDService/?SSDLicenceCheck" target="_blank">Swiss Skydive Licence & Insurance Check</a></button>
+    <button><a [href]="getBoncardURL(jumper![0].boncardId)" target="_blank">Boncard Saldo</a></button>
+    <button (click)='deleteJumper()'>Springer löschen</button>
 
 </div>

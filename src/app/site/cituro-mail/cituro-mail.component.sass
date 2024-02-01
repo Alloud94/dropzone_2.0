@@ -1,0 +1,45 @@
+@import './src/sass/_var'
+
+.sectionHeader
+    padding-top: 1em
+    padding-bottom: 1em
+
+.tables
+    display: flex
+    width: 100%
+
+.furhterDaysTables
+    display: block !important
+
+.tablesColumn
+    width: 100%
+
+.tablesColumn,
+.tables
+    table
+        table-layout: fixed
+        width: 100%
+        margin-top: 1em
+        tr
+            width: 100%
+            td,
+            th
+                padding: 0.5em
+                border: 1px solid $tableColor
+                border-radius: 5px
+                background-color: white
+                transition: 0.3s
+
+.firstTR
+    th
+        text-align: left
+        padding-top: 0.5em
+        padding-bottom: 0.5em
+        td
+            background-color: $secondBackground !important
+
+.tablesColumn
+    table
+        margin-right: 1em !important
+        th
+            text-align: left
